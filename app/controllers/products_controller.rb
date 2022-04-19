@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class ProductsController < ApplicationController 
 
   get '/product/:name' do
     product = Product.find(params[:name])
@@ -27,11 +27,11 @@ class ProductsController < ApplicationController
 
   post 'product/:name' do
     product = Product.create(
-      :name(params[:name]),
-      :image(params[:image]),
-      :price(params[:price]),
-      :description(params[:description]),
-      :category(params[:category])
+      name:(params[:name]),
+      image:(params[:image]),
+      price:(params[:price]),
+      description:(params[:description]),
+      category:(params[:category])
     )
     product.to_json
   end
@@ -39,11 +39,11 @@ class ProductsController < ApplicationController
   patch 'product/:id' do
     product = Product.find(params[:id])
     product.update(
-      :name(params[:name]),
-      :image(params[:image]),
-      :price(params[:price]),
-      :description(params[:description]),
-      :category(params[:category])
+      name:(params[:name]),
+      image:(params[:image]),
+      price:(params[:price]),
+      description:(params[:description]),
+      category:(params[:category])
     )
     product.to_json
   end

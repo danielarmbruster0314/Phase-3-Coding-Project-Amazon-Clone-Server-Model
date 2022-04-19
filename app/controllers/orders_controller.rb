@@ -7,9 +7,9 @@ class OrdersController < ApplicationController
 
   post 'checkout/:id' do
     order = Order.create(
-      order_number: params[:order_number],
-      user_id: params[:user_id]
-      product_id: params[:product_id]
+      order_number: (params[:order_number]),
+      user_id: (params[:user_id]),
+      product_id: (params[:product_id])
     )
     order.to_json
   end
