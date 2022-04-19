@@ -32,15 +32,15 @@ class UsersController < ApplicationController
     user.to_json
   end
 
-  #edit user's name
-  # patch '/user_name/:first_name' do
-  #   user = User.find(params[:id])
-  #   user.update(
-  #       first_name:(params[:first_name]),
-  #       last_name:(params[:last_name])
-  #   )
-  #   user.to_json
-  # end
+  # edit user's name
+  patch '/user_name/:first_name' do
+    user = User.find(params[:id])
+    user.update(
+        first_name:(params[:first_name]),
+        last_name:(params[:last_name])
+    )
+    user.to_json
+  end
 
   delete '/:user_name' do
     user = User.find(params[:id])
