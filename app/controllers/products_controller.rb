@@ -20,12 +20,17 @@ class ProductsController < ApplicationController
     prodcuts.to_json
   end
 
-  get 'products/most_expensive' do
+  get '/products/most_expensive' do
     prodcuts = Product.all.order(:price).desc
     prodcuts.to_json
   end
 
-  post 'product/:name' do
+  get '/product/:name' do
+    product = Product.where("name LIKE ?", "%#{params[:name]}%")
+    product.to_json
+  end
+
+  post '/product/:name' do
     product = Product.create(
       name:(params[:name]),
       image:(params[:image]),
@@ -36,7 +41,7 @@ class ProductsController < ApplicationController
     product.to_json
   end
 
-  patch 'product/:id' do
+  patch '/product/:id' do
     product = Product.find(params[:id])
     product.update(
       name:(params[:name]),
@@ -48,7 +53,7 @@ class ProductsController < ApplicationController
     product.to_json
   end
 
-  delete 'product/:id' do
+  delete '/product/:id' do
     product = Product.find(params[:id])
     product.destroy
     product.to_json
