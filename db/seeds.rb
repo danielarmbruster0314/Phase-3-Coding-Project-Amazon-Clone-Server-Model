@@ -103,7 +103,7 @@ the_lean_startup = Product.create(
 )
 
 the_art_of_zen_and_motorcycle_maintenance = Product.create(
-    name: "The Art of Zen and Motorcycle Maintenance",
+    name: "Zen and the Art of Motorcycle Maintenance",
     image: "https://target.scene7.com/is/image/Target/GUEST_f71a64fe-d386-4482-84d3-5f79c90566e5?wid=325&hei=325&qlt=80&fmt=pjpeg",
     price: 13.39,
     description: "One of the most influential and provocative books of its generation, 'Zen & the Art of Motorcycle Maintenance' continues to attract and inspire readers of all ages with its intriguing blend of ancient and Eastern philosophy, cultural criticism, and scientific inquiry.",
@@ -120,11 +120,16 @@ the_last_lecture = Product.create(
 
 puts "Seeding Review"
 
-Review.create(
-    star_rating: rand(1..5),
-    review: "This is awesome!",
-    user_id: user.id,
-    product_id: air_fryer.id
-)
+Review.create(star_rating: rand(1..5),review: "This is awesome!",user_id: user.id, product_id: air_fryer.id)
+Review.create(star_rating: rand(1..5),review: "This is awesome2!",user_id: user.id, product_id: air_fryer.id)
+Review.create(star_rating: rand(1..5),review: "This is awesome3!",user_id: user.id, product_id: air_fryer.id)
+Review.create(star_rating: rand(1..5),review: "This is awesome4!",user_id: user.id, product_id: air_fryer.id)
+Review.create(star_rating: rand(1..5),review: "This is awesome5!",user_id: user.id, product_id: air_fryer.id)
+Review.create(star_rating: rand(1..5),review: "This is awesome6!",user_id: user.id, product_id: air_fryer.id)
+Review.create(star_rating: rand(1..5),review: "This is awesome7!",user_id: user.id, product_id: air_fryer.id)
+Review.create(star_rating: rand(1..5),review: "This is awesome8!",user_id: user.id, product_id: air_fryer.id)
+Review.create(star_rating: rand(1..5),review: "This is awesome9!",user_id: user.id, product_id: air_fryer.id)
+Review.create(star_rating: rand(1..5),review: "This is awesome00!",user_id: user.id, product_id: air_fryer.id)
+Review.create(star_rating: rand(1..5),review: "This is awesome123!",user_id: user.id, product_id: air_fryer.id)
 
 puts "✅ Done seeding!"

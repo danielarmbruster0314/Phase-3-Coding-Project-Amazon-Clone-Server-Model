@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
     review.to_json
   end
 
-  post 'reviews/:id' do
+  post '/reviews' do
     review = Review.create(
       review: (params[:review]),
       star_rating: (params[:star_rating]),

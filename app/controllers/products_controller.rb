@@ -6,13 +6,13 @@ class ProductsController < ApplicationController
   end
 
   get '/products' do
-    products = Product.all
-    products.to_json
+    product = Product.all
+    product.to_json(include: :reviews)
   end
 
   get '/products/:category' do
-    products = Product.category.all
-    products.to_json
+    Product.category.all.to_json(include: :reviews)
+    
   end
 
   get '/products/least_expensive' do
