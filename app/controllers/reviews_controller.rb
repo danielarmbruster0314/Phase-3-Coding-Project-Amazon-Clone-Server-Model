@@ -14,13 +14,10 @@ class ReviewsController < ApplicationController
     )
     review.to_json
   end
-    
-  patch 'reviews/:id' do
+    # star_rating: (params[:star_rating]),
+  patch '/reviews/:id' do
     review = Review.find(params[:id])
-    review.update(
-      star_rating: (params[:star_rating]),
-      review: (params[:review])
-    )
+    review.update(review: params[:review])
     review.to_json
   end
 

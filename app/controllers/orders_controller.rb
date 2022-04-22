@@ -1,11 +1,14 @@
 class OrdersController < ApplicationController
-
-  get 'checkout/:id' do
+  get '/oders' do
+    order = Order.all
+    order.to_json(include: :product)
+  end
+  get '/orders/:id' do
     order = Order.find(params[:id])
     order.to_json
   end
 
-  post 'checkout/:id' do
+  post '/orders' do
     order = Order.create(
       order_number: (params[:order_number]),
       user_id: (params[:user_id]),
@@ -23,7 +26,7 @@ class OrdersController < ApplicationController
     order.to_json
   end
     
-  delete 'checkout/:id' do
+  delete '/orders/:id' do
     order = Order.find(params[:id])
     order.destroy
     order.to_json
