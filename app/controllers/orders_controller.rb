@@ -31,5 +31,10 @@ class OrdersController < ApplicationController
     order.destroy
     order.to_json
   end
+  delete '/orders' do
+    order = Order.all
+    order.destroy_all
+    order.to_json
+  end
 
 end
